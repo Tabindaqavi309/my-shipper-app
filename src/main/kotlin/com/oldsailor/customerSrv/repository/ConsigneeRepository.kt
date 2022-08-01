@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface ConsigneeRepository : CrudRepository<CongModel, Long> {
-    @Query(value = "SELECT * FROM consignees LIMIT ?2 OFFSET ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM consignees ORDER BY id DESC LIMIT ?2 OFFSET ?1", nativeQuery = true)
     fun findConsignee(offset: Int, limit: Int): List<CongModel>
 
     @Query(value = "SELECT * FROM consignees WHERE full_name LIKE ?1%", nativeQuery = true)

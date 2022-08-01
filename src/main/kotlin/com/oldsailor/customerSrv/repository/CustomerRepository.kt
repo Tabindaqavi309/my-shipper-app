@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface CustomerRepository : CrudRepository<CustomerModel, Long> {
-    @Query(value = "SELECT * FROM customers LIMIT ?2 OFFSET ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM customers ORDER BY id DESC LIMIT ?2 OFFSET ?1", nativeQuery = true)
     fun findCustomers(offset: Int, limit: Int): List<CustomerModel>
 
     // @Query(value = "SELECT id, full_name FROM CUSTOMERS WHERE full_name LIKE ?1%", nativeQuery = true)
