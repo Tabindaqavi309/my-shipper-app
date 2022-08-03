@@ -40,7 +40,7 @@ class BasicAuthSecurity : WebSecurityConfigurerAdapter() {
 
     fun corsConfigurationSource(): CorsConfigurationSource? {
         val configuration = CorsConfiguration()
-        val allowOrigins: List<String> = listOf("https://ghostly-barrow-27555.herokuapp.com", "http://localhost:3000")
+        val allowOrigins: List<String> = listOf("https://shipping-ui-app.herokuapp.com", "http://localhost:3000")
         configuration.allowedOrigins = allowOrigins
         configuration.allowedMethods = listOf("*")
         configuration.allowedHeaders = listOf("*")
