@@ -58,7 +58,7 @@ class DockReceiptController {
 
     @GetMapping("/dock_receipt/{id}")
     @ResponseStatus(HttpStatus.OK)
-    fun findDataById(@PathVariable id: Long) = dockReceiptService.findDataById(id)
+    fun findDataById(@PathVariable id: Long) = dockReceiptService.findDataById(id).first();
 
     @PostMapping("/dock_receipt/full-text-search")
     fun fullTextSearch(@RequestBody req: SearchObj): JSONObject {

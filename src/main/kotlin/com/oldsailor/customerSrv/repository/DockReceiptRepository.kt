@@ -52,7 +52,7 @@ interface DockReceiptRepository : CrudRepository<DockReceiptModel, Long> {
                 "WHERE dock_receipts.id = ?1",
         nativeQuery = true
     )
-    fun findDataById(id: Long): DockReceiptResponseSingle
+    fun findDataById(id: Long): List<DockReceiptResponseSingle>
 
 
     @Query(
