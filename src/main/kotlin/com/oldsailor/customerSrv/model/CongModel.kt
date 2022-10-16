@@ -13,7 +13,6 @@ data class CongModel(
     var id: Long?,
     @Column(unique = true)
     var full_name: String,
-    @Column(unique = true)
     var phone_number: String?,
     var email: String?,
     var address: String?,

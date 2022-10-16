@@ -1,7 +1,5 @@
 package com.oldsailor.customerSrv.model
 
-import org.hibernate.annotations.GenericGenerator
-import java.util.*
 import javax.persistence.*
 
 
@@ -12,7 +10,7 @@ data class CustomerModel(
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(unique=true, name="id")
     var id: Long?,
-    @Column(unique=true, name="full_name")
+    @Column(name="full_name")
     var full_name: String,
     @Column(unique=true)
     var phone_number: String?,
